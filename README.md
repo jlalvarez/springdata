@@ -70,6 +70,8 @@ Spring Boot v2.2.6.RELEASE
 
 ## Instalar PostgreSQL
 
+Para ubuntu:
+
 ```
 $ sudo apt update
 $ sudo apt install postgresql postgresql-contrib
@@ -98,6 +100,25 @@ local   all             all                                     trust
 host    all             all             127.0.0.1/32            trust
 ```
 
+Para redhat:
+```
+$ sudo yum update
+$ yum list postgresql*
+
+$ sudo yum install postgresql96-server
+
+$ sudo service postgresql96 initdb
+
+$ sudo chkconfig postgresql96 on
+
+$ sudo service postgresql96 start
+Starting postgresql96 service:                             [  OK  ]
+
+$ sudo service postgresql96 status
+postmaster (pid  10313) is running...
+```
+
+Para crear la BD utiliza los comandos anteriores.
 
 
 ## Crear Aplicación Spring
