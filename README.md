@@ -1,4 +1,4 @@
-# Aplicación Spring en prodcución en Heroku
+# Aplicación Spring a producción en Heroku
 
 En esta guía vamos a detallar los pasos para desplegar una aplicación Spring MVC y JPA en producción en Heroku.
 Utilizaremos AWS Cloud9 como entorno de desarrollo y PostgreSQL como SGBD.
@@ -484,5 +484,33 @@ $ git commit -m "first commit"
 ## Despliega la aplicación a producción
 
 ```
-git push heroku master
+$ git push heroku master
+
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Java app detected
+remote: -----> Installing JDK 1.8... done
+remote: -----> Executing: ./mvnw -DskipTests clean dependency:list install
+...
+remote:        [INFO] BUILD SUCCESS
+remote:        [INFO] ------------------------------------------------------------------------
+remote:        [INFO] Total time:  15.173 s
+remote:        [INFO] Finished at: 2019-02-06T02:20:42Z
+remote:        [INFO] ------------------------------------------------------------------------
+remote: -----> Discovering process types
+remote:        Procfile declares types     -> (none)
+remote:        Default types for buildpack -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 64.8M
+remote: -----> Launching...
+remote:        Released v3
+remote:        https://safe-woodland-66362.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/safe-woodland-66362.git
+ * [new branch]      master -> master
 ```
+
+Accede a la URL de a aplicación, en este caso https://safe-woodland-66362.herokuapp.com/
